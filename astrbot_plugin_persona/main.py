@@ -1,11 +1,11 @@
 """
 AstrBot Persona Commands Plugin
-复刻 /persona 指令，用于列出和切换人格
+复刻 /re-persona 指令，用于列出和切换人格
 
 使用方法：
-- /persona - 列出所有人格
-- /persona <人格名> - 切换到指定人格
-- /persona view <人格名> - 查看人格详细信息
+- /re-persona - 列出所有人格
+- /re-persona <人格名> - 切换到指定人格
+- /re-persona view <人格名> - 查看人格详细信息
 """
 from typing import TYPE_CHECKING
 
@@ -50,15 +50,15 @@ class PersonaPlugin(Star):
                 )
         return lines
 
-    @filter.command("persona")
+    @filter.command("re-persona")
     async def persona(self, event: AstrMessageEvent):
         """
         Persona 命令主入口
 
         使用方法：
-        - /persona - 列出所有人格
-        - /persona <人格名> - 切换到指定人格
-        - /persona view <人格名> - 查看人格详细信息
+        - /re-persona - 列出所有人格
+        - /re-persona <人格名> - 切换到指定人格
+        - /re-persona view <人格名> - 查看人格详细信息
         """
         message_str = event.message_str.strip()
         l = message_str.split(" ")
@@ -68,10 +68,10 @@ class PersonaPlugin(Star):
             msg = (
                 "📂 **人格管理**\n\n"
                 "使用方法：\n"
-                "• `/persona` - 列出所有人格\n"
-                "• `/persona <人格名>` - 切换到指定人格\n"
-                "• `/persona view <人格名>` - 查看人格详细信息\n"
-                "\n输入 `/persona list` 查看所有可用人格。"
+                "• `/re-persona` - 列出所有人格\n"
+                "• `/re-persona <人格名>` - 切换到指定人格\n"
+                "• `/re-persona view <人格名>` - 查看人格详细信息\n"
+                "\n输入 `/re-persona list` 查看所有可用人格。"
             )
             yield event.plain_result(msg)
             return
@@ -93,8 +93,8 @@ class PersonaPlugin(Star):
 
             total_count = len(all_personas)
             lines.append(f"\n共 {total_count} 个人格")
-            lines.append("\n*使用 `/persona <人格名>` 设置人格")
-            lines.append("*使用 `/persona view <人格名>` 查看详细信息")
+            lines.append("\n*使用 `/re-persona <人格名>` 设置人格")
+            lines.append("*使用 `/re-persona view <人格名>` 查看详细信息")
 
             msg = "\n".join(lines)
             yield event.plain_result(msg)
@@ -146,7 +146,7 @@ class PersonaPlugin(Star):
 
         if not target_persona:
             yield event.plain_result(
-                f"未找到人格：{persona_name}\n\n输入 `/persona list` 查看所有可用人格。"
+                f"未找到人格：{persona_name}\n\n输入 `/re-persona list` 查看所有可用人格。"
             )
             return
 

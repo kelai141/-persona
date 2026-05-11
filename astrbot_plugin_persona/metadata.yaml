@@ -1,5 +1,5 @@
 name: astrbot_plugin_persona
-desc: 复刻 /persona 指令，用于列出和切换人格
+desc: 复刻 /re-persona 指令，用于列出和切换人格
 author: AstrBot Community
 version: 1.0.0
 repo: https://github.com/AstrBotDevs/AstrBot
