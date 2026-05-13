@@ -155,14 +155,10 @@ class PersonaPlugin(Star):
             session_id = session.session_id
             conversation_manager = self.context.conversation_manager
 
-            curr_cid = await conversation_manager.get_curr_conversation_id(
-                umo, session_id
-            )
+            curr_cid = await conversation_manager.get_curr_conversation_id(session_id)
 
             if curr_cid:
-                conv = await conversation_manager.get_conversation(
-                    umo, session_id, curr_cid
-                )
+                conv = await conversation_manager.get_conversation(session_id, curr_cid)
                 if conv:
                     conv.persona_id = target_persona.persona_id
                     await conversation_manager.update_conversation(conv)

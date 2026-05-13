@@ -1,6 +1,6 @@
 name: astrbot_plugin_persona
 desc: 复刻 /re-persona 指令，用于列出和切换人格
 author: AstrBot Community
-version: 1.0.0
+version: 1.0.5
 repo: https://github.com/AstrBotDevs/AstrBot
 astrbot_version: ">=4.0.0"
