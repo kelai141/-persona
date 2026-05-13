@@ -1,0 +1,16 @@
+name: astrbot_plugin_persona
+display_name: Persona 指令插件
+desc: 复刻被移除的 /persona 指令，用于列出和切换人格
+short_desc: 人格管理插件，支持使用 /re-persona 指令
+author: AstrBot Community
+version: 1.0.5
+repo: https://github.com/kelai141/-persona
+astrbot_version: ">=4.23.1"
+support_platforms:
+  - qq
+  - telegram
+  - discord
+  - kook
+  - wecom
+  - feishu
+  - dingtalk
